@@ -1,4 +1,7 @@
 # Testcontainers SpringBoot Quickstart
+
+[![CI](https://github.com/Hadiademi/testcontainers-todo-testing/actions/workflows/maven.yml/badge.svg)](https://github.com/Hadiademi/testcontainers-todo-testing/actions/workflows/maven.yml)
+
 This quick starter will guide you to configure and use Testcontainers in a SpringBoot project.
 
 In this guide, we'll look at a sample Spring Boot application that uses Testcontainers for running unit tests with real dependencies.
