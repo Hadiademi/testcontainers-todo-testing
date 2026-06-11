@@ -68,7 +68,7 @@ public class SeleniumE2ETests {
         String apiUrl = baseUrl + "/todos";
         driver.get(baseUrl + "/?" + apiUrl);
 
-        assertThat(driver.getTitle()).isEqualTo("Sistemi i Menaxhimit të Detyrave - Valton");
+        assertThat(driver.getTitle()).isEqualTo("Sistemi i Menaxhimit të Detyrave");
 
         driver.findElement(By.id("new-todo")).sendKeys("first todo" + Keys.RETURN);
         WebElement element = driver.findElement(By.xpath("//*[@id=\"todo-list\"]/li[1]/div/label"));
