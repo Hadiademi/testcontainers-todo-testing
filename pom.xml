@@ -66,6 +66,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<!-- Toxiproxy: a programmable TCP proxy used to inject network
+			     failures (latency, dropped connections) between the app and the
+			     database, so we can test recovery/reliability behaviour. -->
+			<groupId>org.testcontainers</groupId>
+			<artifactId>toxiproxy</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>selenium</artifactId>
 			<scope>test</scope>
