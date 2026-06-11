@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+<head>
+    <meta charset="utf-8">
+    <title>Sistemi i Menaxhimit të Detyrave - Valton</title>
+    <link rel="stylesheet" href="css/vendor/todomvc-common.css">
+    <link rel="stylesheet" href="css/chooser.css">
+</head>
+<body>
+
+<section id="api-root">
+    <div class="wrapper">
+        <label for="api-root-url">Todo-Backend API Root (Serveri)</label>
+        <input id="api-root-url" placeholder="p.sh. http://localhost:8080/todos"></input>
+    </div>
+    <button>Nis</button>
+</section>
+
+<section id="target-info">
+    <h2>Klienti u lidh me serverin: <span class="target-url"/></h2>
+    <a href="./index.html">Ndrysho serverin e lidhjes</a>
+</section>
+
+<section id="todoapp">
+    <header id="header">
+        <h1>Valton Todos</h1>
+        <input id="new-todo" placeholder="Çfarë duhet të bëhet sot?" autofocus>
+    </header>
+    <section id="main">
+        <input id="toggle-all" type="checkbox">
+        <label for="toggle-all">Shëno të gjitha si të përfunduara</label>
+        <ul id="todo-list"></ul>
+    </section>
+    <footer id="footer"></footer>
+</section>
+<footer id="info">
+    <p>Kliko dy herë mbi një detyrë për ta modifikuar atë</p>
+    <p><strong>Projekti Punuar nga:</strong> Valton | Punë Praktike në Fakultet</p>
+    <p>Implementuar me Spring Boot, PostgreSQL dhe Testcontainers</p>
+</footer>
+<script type="text/template" id="item-template">
+    <div class="view">
+        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+        <label><%- title %></label>
+        <button class="destroy"></button>
+    </div>
+    <input class="edit" value="<%- title %>">
+</script>
+<script type="text/template" id="stats-template">
+    <span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'detyrë' : 'detyra' %> mbetur</span>
+    <ul id="filters">
+        <li>
+            <a class="selected" href="#/">Të gjitha</a>
+        </li>
+        <li>
+            <a href="#/active">Aktive</a>
+        </li>
+        <li>
+            <a href="#/completed">Të përfunduara</a>
+        </li>
+    </ul>
+    <% if (completed) { %>
+    <button id="clear-completed">Fshi ato të përfunduara (<%= completed %>)</button>
+    <% } %>
+</script>
+<script src="js/vendor/todomvc-common.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/underscore.js"></script>
+<script src="js/vendor/backbone.js"></script>
+
+<script src="js/models/todo.js"></script>
+<script src="js/collections/todos.js"></script>
+<script src="js/views/todo-view.js"></script>
+<script src="js/views/app-view.js"></script>
+<script src="js/routers/router.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
